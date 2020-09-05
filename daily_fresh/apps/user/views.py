@@ -64,12 +64,12 @@ class RegisterView(View):
         receiver = [email]
         html_message = '<h1>%s ，欢迎您成为天天生鲜会员</h1>, 请点击下面链接激活您的账户<br> <a href="http://127.0.0.1:8000/user/active/%s">点击激活</a>' % (
         user_name, token)
-        # send_mail(subject, message, sender, receiver, html_message=html_message)
-        tasks.send_register_active_mail.delay(email, user_name, token)
+        send_mail(subject, message, sender, receiver, html_message=html_message)
+        # tasks.send_register_active_mail.delay(email, user_name, token)
 
         # 返回应答，跳转到首页
-        # return redirect(reverse('goods:index'))
-        return HttpResponse("OK")
+        return redirect(reverse('goods:index'))
+        # return HttpResponse("OK")
 
 class ActiveView(View):
     def get(self, request, token):
@@ -101,10 +101,14 @@ class LoginView(View):
         password = request.POST.get('pwd')
 
         if not all([username, password]):
-            return render(request, 'index.html', {'errmsg': '数据不完整'})
+            return render(request, 'login.html', {'errmsg': '数据不完整'})
 
         # django内置的身份验证函数
         user = authenticate(username=username, password=password)
+        # user = User.objects.get(username=username)
+        # if password != user.password:
+        #     user = None
+
         if user is not None:
             # 用户名和密码正确
             if user.is_active:
@@ -116,7 +120,7 @@ class LoginView(View):
                 next_url = request.GET.get('next', reverse('goods:index'))
 
                 # 跳转到next_url
-                response = redirect(next_url) # HttpResponseRedict
+                response = redirect(next_url)  # HttpResponseRedict
 
                 # 判断是否需要记住用户名
                 remember = request.POST.get('remember')
@@ -134,7 +138,7 @@ class LoginView(View):
 
         else:
             # 用户名和密码错误
-            return render(request, 'login.html', {'errmsg':'用户名和密码错误'})
+            return render(request, 'login.html', {'errmsg': '用户名和密码错误'})
 
 
 

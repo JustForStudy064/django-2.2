@@ -151,4 +151,16 @@ EMAIL_HOST_PASSWORD = 'vzidzfebfidsbbjf'
 # 收件人看到的发件人
 EMAIL_FROM = 'python项目<a844523879@qq.com>'
 
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://172.21.240.114:6379/9",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
 
+# 配置session存储
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
