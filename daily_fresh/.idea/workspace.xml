@@ -19,18 +19,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be99124-6883-45e6-99eb-ea97cb15ffd0" name="Default Changelist" comment="git init">
+    <list default="true" id="9be99124-6883-45e6-99eb-ea97cb15ffd0" name="Default Changelist" comment="添加了redis存储登录信息的功能">
+      <change afterPath="$PROJECT_DIR$/templates/base_no_cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/goods/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/goods/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daily_fresh/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/daily_fresh/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -43,6 +47,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -92,7 +97,8 @@
       <updated>1599280984895</updated>
       <workItem from="1599280986773" duration="150000" />
       <workItem from="1599281489051" duration="3500000" />
-      <workItem from="1599310758002" duration="5505000" />
+      <workItem from="1599310758002" duration="9394000" />
+      <workItem from="1599353076160" duration="597000" />
     </task>
     <task id="LOCAL-00001" summary="git init">
       <created>1599311024250</created>
@@ -101,7 +107,21 @@
       <option name="project" value="LOCAL" />
       <updated>1599311024250</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加了redis存储登录信息的功能">
+      <created>1599316754601</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599316754601</updated>
+    </task>
+    <task id="LOCAL-00003" summary="添加了redis存储登录信息的功能">
+      <created>1599316759712</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1599316759712</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,10 +137,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="git init" />
-    <option name="LAST_COMMIT_MESSAGE" value="git init" />
+    <MESSAGE value="添加了redis存储登录信息的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了redis存储登录信息的功能" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1599287197455">
@@ -131,5 +153,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599281036036" />
+    <state x="650" y="145" key="search.everywhere.popup" timestamp="1599318181110">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="650" y="145" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1599318181110" />
   </component>
 </project>
