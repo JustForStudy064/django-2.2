@@ -9,7 +9,7 @@ import time
 # django.setup()
 
 # 创建一个Celery对象
-app = Celery('celery_tasks.tasks', broker='redis://172.21.240.114:6379/8')
+app = Celery('celery_tasks.tasks', broker='redis://ip:6379/8')
 # 定义任务函数
 @app.task
 def send_register_active_mail(to_email, username, token):

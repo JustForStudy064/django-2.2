@@ -19,9 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be99124-6883-45e6-99eb-ea97cb15ffd0" name="Default Changelist" comment="添加了redis存储登录信息的功能">
-      <change afterPath="$PROJECT_DIR$/templates/base_no_cart.html" afterDir="false" />
+    <list default="true" id="9be99124-6883-45e6-99eb-ea97cb15ffd0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/fdfs/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/fdfs/client.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/fdfs/storage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/mixin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/goods/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/goods/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/goods/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/goods/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/goods/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/goods/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/order/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daily_fresh/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/daily_fresh/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,10 +41,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -50,6 +66,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -58,7 +75,13 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\asus\Desktop\dailyfresh2\daily_fish\daily_fresh\templates" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="daily_fresh" type="Python.DjangoServer" factoryName="Django server">
@@ -67,6 +90,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="daily_fresh.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -98,7 +122,19 @@
       <workItem from="1599280986773" duration="150000" />
       <workItem from="1599281489051" duration="3500000" />
       <workItem from="1599310758002" duration="9394000" />
-      <workItem from="1599353076160" duration="597000" />
+      <workItem from="1599353076160" duration="16075000" />
+      <workItem from="1599396670682" duration="5858000" />
+      <workItem from="1599447527449" duration="596000" />
+      <workItem from="1599455474277" duration="1120000" />
+      <workItem from="1599490783897" duration="6000" />
+      <workItem from="1600245552677" duration="596000" />
+      <workItem from="1600398428304" duration="1222000" />
+      <workItem from="1600776959342" duration="340000" />
+      <workItem from="1600911419259" duration="3944000" />
+      <workItem from="1600925894233" duration="289000" />
+      <workItem from="1600926488834" duration="2243000" />
+      <workItem from="1601219486499" duration="444000" />
+      <workItem from="1601648865543" duration="1764000" />
     </task>
     <task id="LOCAL-00001" summary="git init">
       <created>1599311024250</created>
@@ -121,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599316759712</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="对模板页面进行抽取">
+      <created>1599354484486</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1599354484486</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,20 +185,49 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="git init" />
     <MESSAGE value="添加了redis存储登录信息的功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了redis存储登录信息的功能" />
+    <MESSAGE value="对模板页面进行抽取" />
+    <option name="LAST_COMMIT_MESSAGE" value="对模板页面进行抽取" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Deployment" timestamp="1599456009002">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1599456009002" />
+    <state x="345" y="58" key="#SSH_Configurations" timestamp="1599455690122">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="345" y="58" key="#SSH_Configurations/0.0.1536.824@0.0.1536.824" timestamp="1599455690122" />
+    <state x="718" y="152" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599354442830">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="718" y="152" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1599354442830" />
     <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1599287197455">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599287197455" />
-    <state x="270" y="57" key="SettingsEditor" timestamp="1599281036036">
+    <state width="1022" height="210" key="GridCell.Tab.0.bottom" timestamp="1600920448924">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599281036036" />
-    <state x="650" y="145" key="search.everywhere.popup" timestamp="1599318181110">
+    <state width="1022" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600920448924" />
+    <state width="1022" height="210" key="GridCell.Tab.0.center" timestamp="1600920448924">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="650" y="145" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1599318181110" />
+    <state width="1022" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600920448924" />
+    <state width="1022" height="210" key="GridCell.Tab.0.left" timestamp="1600920448924">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1022" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600920448924" />
+    <state width="1022" height="210" key="GridCell.Tab.0.right" timestamp="1600920448924">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1022" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600920448924" />
+    <state x="270" y="57" key="SettingsEditor" timestamp="1599455643967">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599455643967" />
+    <state x="650" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1600919461143">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="650" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1600919461143" />
   </component>
 </project>

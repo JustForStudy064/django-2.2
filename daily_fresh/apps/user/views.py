@@ -3,10 +3,13 @@ from django.views.generic import View
 from django.core.mail import send_mail
 from daily_fresh import settings
 from django.http import HttpResponse
-from user.models import User
+from user.models import User, Address
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from itsdangerous import SignatureExpired
 from django.contrib.auth import authenticate, login, logout
+from utils.mixin import LoginRequiredMixin
+from django_redis import get_redis_connection
+from goods.models import GoodsSKU
 from celery_tasks import tasks
 import re
 
@@ -63,13 +66,14 @@ class RegisterView(View):
         sender = settings.EMAIL_FROM
         receiver = [email]
         html_message = '<h1>%s ，欢迎您成为天天生鲜会员</h1>, 请点击下面链接激活您的账户<br> <a href="http://127.0.0.1:8000/user/active/%s">点击激活</a>' % (
-        user_name, token)
+            user_name, token)
         send_mail(subject, message, sender, receiver, html_message=html_message)
         # tasks.send_register_active_mail.delay(email, user_name, token)
 
         # 返回应答，跳转到首页
         return redirect(reverse('goods:index'))
         # return HttpResponse("OK")
+
 
 class ActiveView(View):
     def get(self, request, token):
@@ -127,7 +131,7 @@ class LoginView(View):
 
                 if remember == 'on':
                     # 记住用户名
-                    response.set_cookie('user_name', username, max_age=7*24*3600)
+                    response.set_cookie('user_name', username, max_age=7 * 24 * 3600)
                 else:
                     response.delete_cookie('user_name')
 
@@ -141,4 +145,95 @@ class LoginView(View):
             return render(request, 'login.html', {'errmsg': '用户名和密码错误'})
 
 
+class LogoutView(View):
+    """退出登陆"""
 
+    def get(self, request):
+        logout(request)
+        return redirect(reverse('goods:index'))
+
+
+# /user
+class UserOrderView(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'user_center_order.html', {'page': 'order'})
+
+
+# /user/order
+class UserInfoView(LoginRequiredMixin, View):
+    def get(self, request):
+        user = request.user
+
+        address = Address.objects.get_default_address(user)
+
+        # 使用模板
+        return render(request, 'user_center_info.html', {'page': 'user', 'address': address, 'user': user})
+
+
+# /user/address
+class AddressView(LoginRequiredMixin, View):
+    """用户中心页面"""
+
+    def get(self, request):
+        # 获取登录用户对应的User对象
+        user = request.user
+
+        address = Address.objects.get_default_address(user)
+        # 获取用户的历史浏览记录
+        # from redis import StrictRedis
+        # sr = StrictRedis(host='172.16.179.130', port='6379', db=9)
+
+        con = get_redis_connection('default')
+
+        history_key = 'history_%d' % user.id
+
+        # 获取用户最新浏览的5个商品的id
+        sku_ids = con.lrange(history_key, 0, 4)
+
+        goods_li = []
+        for id in sku_ids:
+            goods = GoodsSKU.objects.get(id=id)
+            goods_li.append(goods)
+
+        context = {'page': 'address',
+                   'address': address,
+                   'goods_li': goods_li}
+
+        # 使用模板
+        return render(request, 'user_center_site.html', context)
+
+    def post(self, request):
+        receiver = request.POST.get('receiver')
+        addr = request.POST.get('addr')
+        zip_code = request.POST.get('zip_code')
+        phone = request.POST.get('phone')
+
+        if not all([receiver, addr, phone]):
+            return render(request, 'user_center_site.html', {'page': 'address', 'errmsg': '数据不完整'})
+
+        if not re.match(r'^1[3|4|5|7|8][0-9]{9}$', phone):
+            return render(request, 'user_center_site.html', {'page': 'address', 'errmsg': '手机格式不正确'})
+
+        user = request.user
+
+        address = Address.objects.get_default_address(user)
+
+        # try:
+        #     address = Address.objects.get(user=user, is_default=True)
+        # except Address.DoesNotExist:
+        #     address = None
+
+        if address:
+            is_default = False
+        else:
+            is_default = True
+
+        Address.objects.create(user=user,
+                               receiver=receiver,
+                               addr=addr,
+                               zip_code=zip_code,
+                               phone=phone,
+                               is_default=is_default)
+
+        # 返回应答， 刷新地址页面
+        return redirect(reverse('user:address'))  # get 请求方式

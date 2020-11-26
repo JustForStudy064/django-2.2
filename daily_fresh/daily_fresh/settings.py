@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%__n-4n3f(peff1$lgyiy4ln5^@e$d*m+i89tdf^z7jfz_4=(w'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -82,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': 'dailyfresh2',
+        'NAME': 'dailyfresh',
         'PASSWORD': 'mysql',
         'USER': 'root',
         'HOST': 'localhost',
@@ -145,16 +145,17 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 25
 # 发送邮件的邮箱
-EMAIL_HOST_USER = 'a844523879@qq.com'
+EMAIL_HOST_USER = ''
 # 在邮箱中设置的客户端授权密码
-EMAIL_HOST_PASSWORD = 'vzidzfebfidsbbjf'
+EMAIL_HOST_PASSWORD = ''
 # 收件人看到的发件人
-EMAIL_FROM = 'python项目<a844523879@qq.com>'
+EMAIL_FROM = 'python项目<邮箱地址>'
+
 
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://172.21.240.114:6379/9",
+        "LOCATION": "redis://ip:6379/9",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
@@ -164,3 +165,9 @@ CACHES = {
 # 配置session存储
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
+
+# 配置url地址
+LOGIN_URL = '/user/login'  # /accounts/login
+
+# 设置Django的文件存储类
+DEFAULT_FILE_STORAGE = 'utils.fdfs.storage.FDFSStorage'
