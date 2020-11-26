@@ -12,5 +12,7 @@ My first Python full stack（just for study）
 将代码中的一些信息进行了修改，因为有一些直接关联到我个人的服务器，我将它删除了，所以clone没有办法跑起来的。
 
 使用的技术栈： django2.1.8  +  jquery
+学习建议：前端三件套  + python 基础 + python 网络编程 +  Linux基础学习 + django基础学习 +  mysql + redis
+注：建议先学一下python网络编程，再来学习django
 
-我将它部署到了我的服务器上，地址为47.112.253.235， 代码仅供学习用。
+我将它部署到了我的服务器上，地址为http://47.112.253.235/  代码仅供学习用。
